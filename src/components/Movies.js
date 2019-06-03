@@ -51,10 +51,10 @@ class Movies extends Component {
        <ListGroup>
          { user && movies.map(movie => (
            <ListGroup.Item key={movie._id} className= "content">
-             <span className="h5 d-block"><strong className= "unit">Title:</strong> <h4> {movie.title}</h4></span>
-             <span className="h5 d-block"><strong className= "unit">Starring:</strong>  <h4>{movie.starring}</h4></span>
-             <span className="h5 d-block"> <strong className= "unit">Runtime</strong>  <h4>{movie.runtime} Minutes</h4></span>
-             <span className="h5 d-block"><strong className= "unit"> Description</strong>  <h4>{movie.description}</h4></span>
+             <span className="h5 d-block"><strong className= "unit">Title:</strong> <h6> {movie.title}</h6></span>
+             <span className="h5 d-block"><strong className= "unit">Starring:</strong>  <h6>{movie.starring}</h6></span>
+             <span className="h5 d-block"> <strong className= "unit">Runtime</strong>  <h6>{movie.runtime} Minutes</h6></span>
+             <span className="h5 d-block"><strong className= "unit"> Description</strong>  <h6>{movie.description}</h6></span>
              <Button variant="danger" onClick={() => this.handleDelete(movie._id)}>Delete Movie</Button>
            </ListGroup.Item>
          )) }
