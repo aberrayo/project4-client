@@ -8,6 +8,8 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+import Movies from './components/Movies'
+import CreateMovies from './components/CreateMovie'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -43,6 +45,12 @@ class App extends Component {
           </Alert>
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <Movies user={user} alert={this.alert} />
+          )} />
+          <AuthenticatedRoute user={user} path='/create-movie' render={() => (
+            <CreateMovies alert={this.alert} user={user} />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />

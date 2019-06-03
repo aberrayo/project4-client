@@ -1,50 +1,70 @@
-$charcoal: #bbb;
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/background-for-wedding-website-3.jpg");
+  background-size: cover;
+}
+$success: #c7f282;
+$warning: #f1e681;
+$error: #f08181;
+$charcoal: #ccc;
 
-.main-header {
-  align-items: center;
-  border-bottom: 1px solid $charcoal;
-  display: flex;
-  height: 100px;
-  padding: 0 20px;
+.flash-success,
+.flash-warning,
+.flash-error {
+  border: 1px solid $charcoal;
+  display: block;
+  left: 25%;
+  padding: 30px;
+  position: fixed;
+  text-align: center;
+  top: 15%;
+  width: 50%;
+  z-index: 1;
+}
+.content {
+  background-image: url("https://bangaloreeducationservices.com/wp-content/uploads/2016/11/website-backgrounds-E280AB289855821E280AC-E280ABE280AC.jpg");
+}
+.flash-success {
+  background-color: $success;
+}
 
-  a,
-  span {
-    font-size: 1.2em;
-    margin: 0 15px;
+.flash-warning {
+  background-color: $warning;
+}
+
+.flash-error {
+  background-color: $error;
+}
+
+.form {
+  margin: 15% auto 0;
+  max-width: 25em;
+}
+
+.alert {
+  animation: .5s ease-in-out 0s 1 light-bounce-in;
+}
+
+@keyframes light-bounce-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  50% {
+    transform: translateY(5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
-
-.main-header > nav {
-  align-items: center;
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-end;
-}
-
-@media (max-width: 600px) {
-  .main-header {
-    flex-direction: column;
-    font-size: 0.7em;
-    height: auto;
-    padding: 10px;
-
-    h1 {
-      font-size: 2.5em;
-    }
-  }
-}
-
-@media (max-width: 450px) {
-  .main-header > nav {
-    flex-direction: column;
-    width: 100%;
-
-    a,
-    span {
-      border: 1px solid $charcoal;
-      margin-bottom: 5px;
-      text-align: center;
-      width: 80%;
-    }
-  }
-}
+// }
+// .unit {
+  // color: red;
+// }
+//.m-0 {
+  //color: red;
+// }
