@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import apiUrl from '../apiConfig'
 
-class CreateMovie extends Component {
+class UpdateMovie extends Component {
   constructor () {
     super()
 
@@ -17,11 +17,11 @@ class CreateMovie extends Component {
     }
   }
 
-  handleSubmit = (event) => {
+  handleUpdate = (event, _id) => {
     event.preventDefault()
 
     axios({
-      url: `${apiUrl}/movies`,
+      url: `${apiUrl}/movies/${_id}`,
       method: 'patch',
       headers: {
         'Authorization': `Token token=${this.props.user.token}`
@@ -51,7 +51,7 @@ class CreateMovie extends Component {
       })
   }
 
-  handleChange = event => this.setState({
+  handleChange = (event, _id) => this.setState({
     [event.target.name]: event.target.value
   })
 
@@ -66,8 +66,8 @@ class CreateMovie extends Component {
     const { title, starring, runtime, description } = this.state
 
     return (
-      <Form className="form" onSubmit={this.handleSubmit}>
-        <h2>Create Movie</h2>
+      <Form className="form" onSubmit={this.handleUpdate}>
+        <h2>Update Movie</h2>
         <Form.Group controlId="movieTitle">
           <Form.Label>Movie Title</Form.Label>
           <Form.Control
@@ -76,7 +76,7 @@ class CreateMovie extends Component {
             name="title"
             required
             onChange={this.handleChange}
-            placeholder="Enter the movie title"
+            placeholder= "Ti"
           />
         </Form.Group>
         <Form.Group controlId="starring">
@@ -132,4 +132,4 @@ class CreateMovie extends Component {
   }
 }
 
-export default withRouter(CreateMovie)
+export default withRouter(UpdateMovie)

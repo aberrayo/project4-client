@@ -56,6 +56,7 @@ class Movies extends Component {
              <span className="h5 d-block"> <strong className= "unit">Runtime</strong>  <h6>{movie.runtime} Minutes</h6></span>
              <span className="h5 d-block"><strong className= "unit"> Description</strong>  <h6>{movie.description}</h6></span>
              <Button variant="danger" onClick={() => this.handleDelete(movie._id)}>Delete Movie</Button>
+             <Button variant="success" href="#update-movie/_id">Update A Movie</Button>
            </ListGroup.Item>
          )) }
          { !user && movies.map(movie => (

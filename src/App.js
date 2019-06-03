@@ -10,6 +10,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Movies from './components/Movies'
 import CreateMovies from './components/CreateMovie'
+import UpdateMovies from './components/UpdateMovie'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -50,6 +51,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/create-movie' render={() => (
             <CreateMovies alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/update-movie/_id' render={() => (
+            <UpdateMovies alert={this.alert} user={user} />
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
