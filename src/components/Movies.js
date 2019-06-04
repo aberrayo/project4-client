@@ -35,6 +35,7 @@ class Movies extends Component {
          .then(res => {
            this.setState({ movies: res.data.movies })
          })
+         .then(() => this.props.alert(`${this.state.title} has been added deleted!`, 'success'))
          .catch(console.error)
      })
  }

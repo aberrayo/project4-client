@@ -52,7 +52,6 @@ class SignIn extends Component {
             onChange={this.handleChange}
           />
           <Form.Text className="text-danger">
-            We will ALWAYS share your email with anyone else.
           </Form.Text>
         </Form.Group>
         <Form.Group controlId="password">
