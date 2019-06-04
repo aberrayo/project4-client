@@ -1,69 +1,86 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import apiUrl from '../apiConfig'
 
 class UpdateMovie extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
-      title: '',
-      starring: '',
-      runtime: '',
-      description: ''
+      movie: {
+        title: '',
+        starring: '',
+        runtime: '',
+        description: ''
+      },
+      updated: false
     }
   }
+  async componentDidMount () {
+    const response = await axios(`${apiUrl}/movies/${this.props.match.params._id}`)
 
-  handleUpdate = (event, _id) => {
+    this.setState({ movie: response.data.movie })
+  }
+
+  handleUpdate = async event => {
     event.preventDefault()
 
-    axios({
-      url: `${apiUrl}/movies/${_id}`,
-      method: 'patch',
+    await axios({
+      url: `${apiUrl}/movies/${this.props.match.params._id}`,
+      method: 'PATCH',
       headers: {
         'Authorization': `Token token=${this.props.user.token}`
       },
       data: {
         movie: {
-          title: this.state.title,
-          starring: this.state.starring,
-          runtime: this.state.runtime,
-          description: this.state.description
+          title: this.state.movie.title,
+          starring: this.state.movie.starring,
+          runtime: this.state.movie.runtime,
+          description: this.state.movie.description
         }
       }
     })
       .then(response => this.setState({
-        movie: response.data.movie
+        updated: true
       }))
-      .then(() => this.props.alert(`${this.state.title} has been added to the library!`, 'success'))
-      .then(() => this.props.history.push('/'))
+      .then(() => this.props.alert(`${this.state.movie.title} has been added to the library!`, 'success'))
+      // .then(() => this.props.history.push('/'))
       .catch(() => {
         this.props.alert('Whoops! Failed to add your movie. Please try again.', 'danger')
         this.setState({
-          title: '',
-          starring: '',
-          runtime: '',
-          description: ''
+          movie: {
+            title: '',
+            starring: '',
+            runtime: '',
+            description: ''
+          }
         })
       })
   }
 
-  handleChange = (event, _id) => this.setState({
-    [event.target.name]: event.target.value
-  })
-
+  handleChange = (event) => {
+    const updatedField = { [event.target.name]: event.target.value
+    }
+    const editedMovie = Object.assign(this.state.movie, updatedField)
+    this.setState({ movie: editedMovie })
+  }
   resetForm = () => this.setState({
-    title: '',
-    starring: '',
-    runtime: '',
-    description: ''
+    movie: {
+      title: '',
+      starring: '',
+      runtime: '',
+      description: ''
+    }
   })
 
   render () {
-    const { title, starring, runtime, description } = this.state
+    const { updated, title, starring, runtime, description } = this.state
+    if (updated) {
+      return <Redirect to={'/'} />
+    }
 
     return (
       <Form className="form" onSubmit={this.handleUpdate}>
@@ -71,12 +88,12 @@ class UpdateMovie extends Component {
         <Form.Group controlId="movieTitle">
           <Form.Label>Movie Title</Form.Label>
           <Form.Control
-            type="text"
+            type="string"
             value={title}
             name="title"
             required
             onChange={this.handleChange}
-            placeholder= "Ti"
+            placeholder= "Title"
           />
         </Form.Group>
         <Form.Group controlId="starring">
@@ -86,7 +103,7 @@ class UpdateMovie extends Component {
             value={starring}
             name="starring"
             required
-            placeholder="Runtime"
+            placeholder="Starring"
             onChange={this.handleChange}
           />
         </Form.Group>
@@ -104,7 +121,7 @@ class UpdateMovie extends Component {
         <Form.Group controlId="description">
           <Form.Label>Description</Form.Label>
           <Form.Control
-            type="text"
+            type="string"
             value={description}
             name="description"
             required

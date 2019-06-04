@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 import apiUrl from '../apiConfig'
 import Button from 'react-bootstrap/Button'
-
 class Movies extends Component {
   constructor () {
     super()
@@ -55,8 +55,7 @@ class Movies extends Component {
              <span className="h5 d-block"><strong className= "unit">Starring:</strong>  <h6>{movie.starring}</h6></span>
              <span className="h5 d-block"> <strong className= "unit">Runtime</strong>  <h6>{movie.runtime} Minutes</h6></span>
              <span className="h5 d-block"><strong className= "unit"> Description</strong>  <h6>{movie.description}</h6></span>
-             <Button variant="danger" onClick={() => this.handleDelete(movie._id)}>Delete Movie</Button>
-             <Button variant="success" href="#update-movie/_id">Update A Movie</Button>
+             <Button variant="danger" onClick={() => this.handleDelete(movie._id)}>Delete Movie</Button>  <Link to={ '/movies/' + movie._id }><Button variant="success">Update A Movie</Button></Link>
            </ListGroup.Item>
          )) }
          { !user && movies.map(movie => (

@@ -52,7 +52,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/create-movie' render={() => (
             <CreateMovies alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/update-movie/_id' render={() => (
+          <AuthenticatedRoute user={user} exact path='/movies/:_id' render={() => (
             <UpdateMovies alert={this.alert} user={user} />
           )} />
           <Route path='/sign-up' render={() => (
