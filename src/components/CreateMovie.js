@@ -67,7 +67,7 @@ class CreateMovie extends Component {
 
     return (
       <Form className="form" onSubmit={this.handleSubmit}>
-        <h2>Create Movie</h2>
+        <h2>Add A Movie</h2>
         <Form.Group controlId="movieTitle">
           <Form.Label>Movie Title</Form.Label>
           <Form.Control

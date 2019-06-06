@@ -30,13 +30,11 @@ class SignUp extends Component {
       .then(res => setUser(res.data.user))
       .then(() => alert(messages.signUpSuccess, 'success'))
       .then(() => history.push('/'))
-      .catch(error => {
-        console.error(error)
-        this.setState({ email: '', password: '', passwordConfirmation: '' })
-        alert(messages.signUpFailure, 'danger')
+      .catch(() => {
+        alert(messages.signUpFailure, 'warning')
+          .this.setState({ email: '', password: '', passwordConfirmation: '' })
       })
   }
-
   render () {
     const { email, password, passwordConfirmation } = this.state
 

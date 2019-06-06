@@ -67,14 +67,6 @@ class UpdateMovie extends Component {
     const editedMovie = Object.assign(this.state.movie, updatedField)
     this.setState({ movie: editedMovie })
   }
-  resetForm = () => this.setState({
-    movie: {
-      title: '',
-      starring: '',
-      runtime: '',
-      description: ''
-    }
-  })
 
   render () {
     const { updated, title, starring, runtime, description } = this.state
@@ -103,7 +95,7 @@ class UpdateMovie extends Component {
             value={starring}
             name="starring"
             required
-            placeholder="Starring"
+            placeholder={this.state.movie.starring}
             onChange={this.handleChange}
           />
         </Form.Group>
@@ -135,14 +127,6 @@ class UpdateMovie extends Component {
           className="m-1"
         >
           Submit
-        </Button>
-        <Button
-          variant="danger"
-          type="button"
-          className="m-1"
-          onClick={this.resetForm}
-        >
-          Reset
         </Button>
       </Form>
     )

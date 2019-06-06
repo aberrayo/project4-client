@@ -19,7 +19,7 @@ class Movies extends Component {
       .then(res => {
         this.setState({ movies: res.data.movies })
       })
-      // .catch(console.error)
+    // this.props.alert('Whoops! Failed to add your movie. Please try again.', 'danger')
   }
 
  handleDelete = (_id) => {
@@ -36,7 +36,7 @@ class Movies extends Component {
            this.setState({ movies: res.data.movies })
          })
          .then(() => this.props.alert('Has been deleted!', 'success'))
-       // .catch(console.error)
+         .catch(() => this.props.alert('Unable to Delete!', 'failure'))
      })
  }
  render () {
