@@ -1,9 +1,10 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/background-for-wedding-website-3.jpg");
+  background-image: url("http://news.tangatawhenua.com/wp-content/uploads/2011/12/film-reel.jpg");
   background-size: cover;
 }
+
 $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
@@ -22,9 +23,11 @@ $charcoal: #ccc;
   width: 50%;
   z-index: 1;
 }
+
 .content {
   background-image: url("https://bangaloreeducationservices.com/wp-content/uploads/2016/11/website-backgrounds-E280AB289855821E280AC-E280ABE280AC.jpg");
 }
+
 .flash-success {
   background-color: $success;
 }
@@ -65,6 +68,6 @@ $charcoal: #ccc;
 // .unit {
   // color: red;
 // }
-//.m-0 {
-  //color: red;
+// .m-0, .signup {
+  //  color: blue;
 // }

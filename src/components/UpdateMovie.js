@@ -93,7 +93,7 @@ class UpdateMovie extends Component {
             name="title"
             required
             onChange={this.handleChange}
-            placeholder= "Title"
+            placeholder= {this.state.movie.title}
           />
         </Form.Group>
         <Form.Group controlId="starring">
@@ -114,7 +114,7 @@ class UpdateMovie extends Component {
             value={runtime}
             name="runtime"
             required
-            placeholder="Runtime"
+            placeholder={this.state.movie.runtime}
             onChange={this.handleChange}
           />
         </Form.Group>
@@ -125,7 +125,7 @@ class UpdateMovie extends Component {
             value={description}
             name="description"
             required
-            placeholder="Description"
+            placeholder={this.state.movie.description}
             onChange={this.handleChange}
           />
         </Form.Group>

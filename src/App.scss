@@ -28,7 +28,25 @@ $charcoal: #ccc;
 .flash-error {
   background-color: $error;
 }
+.l {
+  color: rgba(200, 100, 255, 0.7);
+}
 
+.o {
+  color: rgba(200, 0, 150, 0.7)
+}
+
+.c {
+  color: rgba(50, 50, 200, 0.7);
+}
+
+.u {
+  color: rgba(100, 100, 200, 0.7);
+}
+
+.s {
+  color: rgba(200, 0, 255, 0.7)
+}
 .auth-form {
   display: flex;
   flex-direction: column;

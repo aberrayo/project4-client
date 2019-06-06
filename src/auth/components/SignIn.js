@@ -40,9 +40,9 @@ class SignIn extends Component {
 
     return (
       <Form className='auth-form' onSubmit={this.onSignIn}>
-        <h3>Sign In</h3>
+        <h3 className='signup'>Sign In</h3>
         <Form.Group controlId="email">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label className='signup'>Email address</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -55,7 +55,7 @@ class SignIn extends Component {
           </Form.Text>
         </Form.Group>
         <Form.Group controlId="password">
-          <Form.Label>Password</Form.Label>
+          <Form.Label className='signup'>Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Enter password"

@@ -19,7 +19,7 @@ class Movies extends Component {
       .then(res => {
         this.setState({ movies: res.data.movies })
       })
-      .catch(console.error)
+      // .catch(console.error)
   }
 
  handleDelete = (_id) => {
@@ -35,8 +35,8 @@ class Movies extends Component {
          .then(res => {
            this.setState({ movies: res.data.movies })
          })
-         .then(() => this.props.alert(`${this.state.title} has been added deleted!`, 'success'))
-         .catch(console.error)
+         .then(() => this.props.alert('Has been deleted!', 'success'))
+       // .catch(console.error)
      })
  }
  render () {
@@ -45,26 +45,32 @@ class Movies extends Component {
    return (
      <Fragment>
        <div className="d-flex justify-content-between align-items-center py-3">
-         <h3 className="m-0"><strong>Movies currently in the Library</strong></h3>
-         {!user && <p className="m-0">Sign in to edit movies</p>}
+         {!user && <h5 className="m-0">
+           <span className="l">Sign in</span> <span className="o">to see</span> <span className="c">and add</span><span> </span>
+
+           <span className="u">to</span> <span className="s">Movie</span> <span className="s">Library</span></h5>}
+         {!user && <h4 className="m-0">
+           <div className="title">
+             <span className="l">M</span>
+             <span className="o">O</span>
+             <span className="c">v</span>
+             <span className="u">I</span>
+             <span className="s">E</span>
+             <span className="s">S</span>
+           </div>
+         </h4>}
          {user && <Button variant="success" href="#create-movie">Add A Movie</Button>}
        </div>
        <ListGroup>
          { user && movies.map(movie => (
            <ListGroup.Item key={movie._id} className= "content">
-             <span className="h5 d-block"><strong className= "unit">Title:</strong> <h6> {movie.title}</h6></span>
-             <span className="h5 d-block"><strong className= "unit">Starring:</strong>  <h6>{movie.starring}</h6></span>
-             <span className="h5 d-block"> <strong className= "unit">Runtime</strong>  <h6>{movie.runtime} Minutes</h6></span>
-             <span className="h5 d-block"><strong className= "unit"> Description</strong>  <h6>{movie.description}</h6></span>
+             <span className="h5 d-block"><strong>Title:</strong> <h6> {movie.title}</h6></span>
+             <span className="h5 d-block"><strong>Starring:</strong>  <h6>{movie.starring}</h6></span>
+             <span className="h5 d-block"><strong>Runtime</strong>  <h6>{movie.runtime} Minutes</h6></span>
+             <span className="h5 d-block"><strong> Description</strong>  <h6>{movie.description}</h6></span>
              <Button variant="danger" onClick={() => this.handleDelete(movie._id)}>Delete Movie</Button>  <Link to={ '/movies/' + movie._id }><Button variant="success">Update A Movie</Button></Link>
            </ListGroup.Item>
          )) }
-         { !user && movies.map(movie => (
-           <ListGroup.Item key={movie._id}>
-             <span className="h5 d-block">  {movie.title}</span>
-             <span>{movie.title}   {movie.starring}</span>
-           </ListGroup.Item>
-         ))}
        </ListGroup>
      </Fragment>
    )

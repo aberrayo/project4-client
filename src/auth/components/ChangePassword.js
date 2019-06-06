@@ -39,7 +39,7 @@ class ChangePassword extends Component {
 
     return (
       <Form className='form' onSubmit={this.onChangePassword}>
-        <h3>ChangePassword</h3>
+        <h3 className='signup'>ChangePassword</h3>
         <Form.Group controlId="oldPassword">
           <Form.Label>Old Password</Form.Label>
           <Form.Control
@@ -52,7 +52,7 @@ class ChangePassword extends Component {
           />
         </Form.Group>
         <Form.Group controlId="newPassword">
-          <Form.Label>New Password</Form.Label>
+          <Form.Label className='signup'>New Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Enter new password"
