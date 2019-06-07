@@ -11,8 +11,9 @@ import ChangePassword from './auth/components/ChangePassword'
 import Movies from './components/Movies'
 import CreateMovies from './components/CreateMovie'
 import UpdateMovies from './components/UpdateMovie'
+import AutoDismissAlert from './components/AutoDismissAlert'
 
-import Alert from 'react-bootstrap/Alert'
+// import Alert from 'react-bootstrap/Alert'
 
 class App extends Component {
   constructor () {
@@ -39,11 +40,10 @@ class App extends Component {
       <React.Fragment>
         <Header user={user} />
         {alerts.map((alert, index) => (
-          <Alert key={index} dismissible variant={alert.type}>
-            <Alert.Heading>
-              {alert.message}
-            </Alert.Heading>
-          </Alert>
+          <AutoDismissAlert
+            key={index}
+            alert={alert}
+          />
         ))}
         <main className="container">
           <Route exact path='/' render={() => (

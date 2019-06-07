@@ -9,9 +9,9 @@ resourse.
 ## Technologies Used
 
 1. REACT
-1. EXPRESS
-1. PostgreSQ
-1. CURLSCRIPTS
+1. JavaScript
+1. HTML
+1. Bootstrap
 
 ## Short Comings
 
@@ -58,6 +58,5 @@ https://safe-waters-15946.herokuapp.com
 ## GitHub link for the back end Repository
 
 https://github.com/aberrayo/project4-api
-## Link to  Entity Relationship Diagram DERD
-
-https://imgur.com/adXtgzU
+## Link to  Wire Frame
+https://imgur.com/JUnpGj7
