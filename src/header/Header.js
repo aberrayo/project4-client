@@ -20,7 +20,7 @@ const unauthenticatedOptions = (
 const Header = ({ user }) => (
   <header className="main-header">
     <Navbar collapseOnSelect bg="dark" variant="dark" expand="md">
-      <Navbar.Brand href="#">Movies</Navbar.Brand>
+      <Navbar.Brand href="#">MovieLibrary</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">

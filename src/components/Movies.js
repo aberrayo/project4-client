@@ -46,9 +46,8 @@ class Movies extends Component {
      <Fragment>
        <div className="d-flex justify-content-between align-items-center py-3">
          {!user && <h5 className="m-0">
-           <span className="l">Sign in</span> <span className="o">to see</span> <span className="c">and add</span><span> </span>
-
-           <span className="u">to</span> <span className="s">Movie</span> <span className="s">Library</span></h5>}
+        Sign In to See<span className="o"> Movie</span> Collection
+         </h5>}
          {!user && <h4 className="m-0">
            <div className="title">
              <span className="l">M</span>

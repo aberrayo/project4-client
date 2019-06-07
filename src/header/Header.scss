@@ -64,10 +64,15 @@ $charcoal: #ccc;
     transform: translateY(0%);
   }
 }
-// }
-// .unit {
-  // color: red;
-// }
-// .m-0, .signup {
-  //  color: blue;
-// }
+
+.m-0 {
+    color: green;
+    opacity: 3;
+}
+.signup {
+  color: white;
+  opacity: 5;
+}
+.o {
+    justify-content: center;
+}

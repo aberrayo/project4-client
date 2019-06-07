@@ -76,9 +76,9 @@ class UpdateMovie extends Component {
 
     return (
       <Form className="form" onSubmit={this.handleUpdate}>
-        <h2>Update Movie</h2>
+        <h2 className="signup">Update Movie</h2>
         <Form.Group controlId="movieTitle">
-          <Form.Label>Movie Title</Form.Label>
+          <Form.Label className="signup">Movie Title</Form.Label>
           <Form.Control
             type="string"
             value={title}
@@ -89,7 +89,7 @@ class UpdateMovie extends Component {
           />
         </Form.Group>
         <Form.Group controlId="starring">
-          <Form.Label>Starring</Form.Label>
+          <Form.Label className="signup">Starring</Form.Label>
           <Form.Control
             type="string"
             value={starring}
@@ -100,7 +100,7 @@ class UpdateMovie extends Component {
           />
         </Form.Group>
         <Form.Group controlId="runtime">
-          <Form.Label>Runtime</Form.Label>
+          <Form.Label className="signup">Runtime</Form.Label>
           <Form.Control
             type="number"
             value={runtime}
@@ -111,7 +111,7 @@ class UpdateMovie extends Component {
           />
         </Form.Group>
         <Form.Group controlId="description">
-          <Form.Label>Description</Form.Label>
+          <Form.Label className="signup">Description</Form.Label>
           <Form.Control
             type="string"
             value={description}
