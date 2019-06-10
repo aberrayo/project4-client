@@ -62,4 +62,4 @@ https://github.com/aberrayo/project4-api
 https://i.imgur.com/fmBzW5q.jpg
 
 ## Screenshot of deployed client
-[(https://i.imgur.com/17812hE.png)]
+https://i.imgur.com/17812hE.png
