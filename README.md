@@ -59,4 +59,7 @@ https://safe-waters-15946.herokuapp.com
 
 https://github.com/aberrayo/project4-api
 ## Link to  Wire Frame
-https://imgur.com/JUnpGj7
+https://i.imgur.com/fmBzW5q.jpg
+
+## Screenshot of deployed client
+file:///home/yonas/Pictures/Scrrenshot.png
