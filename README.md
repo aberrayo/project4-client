@@ -62,4 +62,4 @@ https://github.com/aberrayo/project4-api
 https://i.imgur.com/fmBzW5q.jpg
 
 ## Screenshot of deployed client
-<img alt="doesnt exist" src="file:///home/yonas/Pictures/Scrrenshot.png">
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/Ldz4iZB"><a href="//imgur.com/Ldz4iZB"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
